@@ -1,191 +1,1021 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ᴮᵐᎮᏒØ - پلتفرم گیمینگ</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ᴮᵐᎮᏒØ - پلتفرم گیمینگ</title>
 
-<style>
-body { font-family: 'Rajdhani', sans-serif; background: linear-gradient(135deg, #0d0d0d 0%, #1a0d2e 25%, #2d1b69 50%, #0f3460 75%, #0a0a0a 100%); color:#fff; overflow-x:hidden; margin:0; padding:0;}
-.cyber-grid{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,0,255,0.15) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,255,0.15) 1px,transparent 1px);background-size:40px 40px;animation:gridMove 15s linear infinite;z-index:-1;}
-@keyframes gridMove{0%{transform:translate(0,0);}100%{transform:translate(50px,50px);}}
-.cyber-button{background:linear-gradient(45deg,#1a0d2e,#2d1b69);border:2px solid #ff00ff;color:#ff00ff;padding:15px 30px;border-radius:10px;font-family:'Orbitron', monospace;font-weight:600;cursor:pointer;transition:all 0.4s ease;text-transform:uppercase;letter-spacing:2px;position:relative;overflow:hidden;box-shadow:0 0 15px rgba(255,0,255,0.3);}
-.cyber-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,255,0.3),transparent);transition:left 0.5s;}
-.cyber-button:hover::before{left:100%;}
-.cyber-button:hover{background:linear-gradient(45deg,#ff00ff,#ff66ff);color:#000;box-shadow:0 0 30px rgba(255,0,255,0.8);transform:translateY(-3px);}
-.admin-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:3rem;background:linear-gradient(90deg,#ff0000,#ff6600,#ffd700,#ff6600,#ff0000);background-size:400%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:adminGlow 3s ease-in-out infinite;text-shadow:0 0 15px rgba(255,215,0,0.4);}
-@keyframes adminGlow{0%{background-position:0% 50%;filter:drop-shadow(0 0 5px #ff0000);}50%{background-position:100% 50%;filter:drop-shadow(0 0 15px #ffd700);}100%{background-position:0% 50%;filter:drop-shadow(0 0 5px #ff0000);}}
-.floating-particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;}
-.particle{position:absolute;width:3px;height:3px;background:#ff00ff;border-radius:50%;animation:float 8s ease-in-out infinite;box-shadow:0 0 6px #ff00ff;}
-@keyframes float{0%,100%{transform:translateY(0px) rotate(0deg);opacity:0;}50%{transform:translateY(-150px) rotate(180deg);opacity:1;}}
-.tab-button{background:linear-gradient(45deg,#1a0d2e,#2d1b69);color:#ff00ff;padding:10px 20px;margin:5px;border-radius:10px;cursor:pointer;transition:all 0.3s;}
-.tab-button:hover{background:linear-gradient(45deg,#ff00ff,#ff66ff);color:#000;}
-.server-item{padding:15px;margin:10px 0;border-radius:12px;border:2px solid #00ffff;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all 0.3s ease;}
-.server-item.online{border-color:#00ff00;}
-.server-item.offline{border-color:#ff4444;opacity:0.7;}
-.server-item:hover{transform:translateY(-3px);box-shadow:0 0 20px rgba(0,255,255,0.3);}
+  <!-- Tailwind (طبق قبلی) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-/* Modals */
-.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;justify-content:center;align-items:center;z-index:2000;}
-.panel{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:40px;text-align:center;box-shadow:0 0 50px rgba(0,255,255,0.5);max-width:450px;width:90%;animation:fadeIn 0.5s ease-out;}
-@keyframes fadeIn{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
-.connection-spinner{width:50px;height:50px;border:4px solid rgba(0,255,255,0.3);border-radius:50%;border-top-color:#00ffff;animation:spin 1s linear infinite;margin:0 auto 20px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.progress-bar-container{width:100%;height:6px;background:rgba(255,255,255,0.2);border-radius:3px;overflow:hidden;margin-top:10px;}
-.progress-bar{width:0%;height:100%;background:linear-gradient(90deg,#00ffff,#ff00ff);border-radius:3px;transition:width 0.3s;}
-.password-input-field{background:rgba(0,0,0,0.8);border:2px solid #ff00ff;border-radius:10px;padding:15px;color:#fff;font-size:18px;width:100%;margin:20px 0;font-family:'Rajdhani',sans-serif;text-align:center;letter-spacing:2px;}
-#errorMsg{color:#ff4444;font-size:14px;margin-top:10px;display:none;}
-</style>
-</head>
-<body>
+  <!-- فونت‌ها (مثل قبل) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<div class="cyber-grid"></div>
+  <!-- --- استایل کامل اصلی تو (تقریباً عین همان که فرستادی) --- -->
+  <style>
+        /* ======= استایلِ اصلی از کد اولیه شما (بدون تغییر) ======= */
+        body {
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a0d2e 25%, #2d1b69 50%, #0f3460 75%, #0a0a0a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 0, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridMove 15s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .game-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .game-card:hover::before {
+            left: 100%;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
+            border-color: #00ffff;
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, #1a0d2e, #2d1b69);
+            border: 2px solid #ff00ff;
+            color: #ff00ff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+        
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-button:hover {
+            background: linear-gradient(45deg, #ff00ff, #ff66ff);
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .cyber-button:active {
+            transform: translateY(0);
+        }
+        
+        .nav-item {
+            padding: 18px 25px;
+            margin: 8px 0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-left: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-item:hover::before, .nav-item.active::before {
+            left: 100%;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: rgba(0, 255, 255, 0.15);
+            border-left-color: #00ffff;
+            transform: translateX(15px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2);
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ff00ff;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            box-shadow: 0 0 6px #ff00ff;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-150px) rotate(180deg); opacity: 1; }
+        }
+        
+        .coming-soon-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .coming-soon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .coming-soon-card:hover::before {
+            left: 100%;
+        }
+        
+        .form-input {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px;
+            color: #fff;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border-color: #ff00ff;
+        }
+        
+        .form-select {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px 45px 15px 15px;
+            color: #fff;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+            font-family: 'Rajdhani', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            border-color: #ff00ff;
+        }
+        
+        .form-select:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+        
+        .form-select option {
+            background: #1a0d2e !important;
+            color: #fff !important;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        .form-select option:hover {
+            background: #2d1b69 !important;
+        }
+        
+        .form-select option:checked {
+            background: #ff00ff !important;
+            color: #000 !important;
+        }
+        
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .success-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 3px solid #00ff00;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+            animation: scaleIn 0.5s ease-out;
+            max-width: 500px;
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #ff4444;
+            font-size: 24px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .close-button:hover {
+            color: #ff6666;
+            transform: scale(1.2);
+        }
+        
+        .offline-server {
+            opacity: 0.7;
+            filter: grayscale(0.3);
+        }
+        
+        .offline-server:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+        
+        .offline-button {
+            background: linear-gradient(45deg, #333, #555);
+            border-color: #ff6600;
+            color: #ff6600;
+        }
+        
+        .offline-button:hover {
+            background: linear-gradient(45deg, #ff6600, #ff8800);
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00ffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .connection-progress {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .connection-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            border-radius: 2px;
+            animation: progressLoad 3s ease-in-out;
+        }
+        
+        @keyframes progressLoad {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        
+        .neon-text {
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 30px #ff4444;
+            }
+            to {
+                text-shadow: 0 0 5px #ff4444, 0 0 10px #ff4444, 0 0 15px #ff4444;
+            }
+        }
+        
+        .connection-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .connection-panel {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 3px solid #00ffff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+            animation: scaleIn 0.5s ease-out;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1500;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .password-panel {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 3px solid #ff00ff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 0, 255, 0.5);
+            animation: scaleIn 0.5s ease-out;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #ff4444;
+            font-size: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #ff6666;
+            transform: scale(1.2);
+        }
+        
+        .connection-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00ffff;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto 20px;
+        }
+        
+        .connection-status {
+            font-size: 18px;
+            color: #00ffff;
+            margin: 20px 0;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .password-input-field {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            padding: 15px;
+            color: #fff;
+            font-size: 18px;
+            width: 100%;
+            margin: 20px 0;
+            font-family: 'Rajdhani', sans-serif;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        .password-input-field:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+            border-color: #00ffff;
+        }
+        
+        .password-error {
+            color: #ff4444;
+            font-size: 14px;
+            margin-top: 10px;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .game-font-cs {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff6600;
+        }
+        
+        .game-font-rust {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #cc6600;
+        }
+        
+        .game-font-fivem {
+            font-family: 'Arial Black', sans-serif;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #00ff88;
+        }
+        
+        .game-font-custom {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ff00ff;
+        }
+        
+        .enhanced-form-field {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .enhanced-form-field::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .enhanced-form-field:hover::before {
+            opacity: 1;
+        }
+        
+        .rgb-border {
+            border: 3px solid;
+            border-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3) 1;
+            animation: rgbBorder 2s linear infinite;
+        }
+        
+        @keyframes rgbBorder {
+            0% { border-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3) 1; }
+            14% { border-image: linear-gradient(45deg, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000) 1; }
+            28% { border-image: linear-gradient(45deg, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000, #ff7f00) 1; }
+            42% { border-image: linear-gradient(45deg, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000, #ff7f00, #ffff00) 1; }
+            57% { border-image: linear-gradient(45deg, #0000ff, #4b0082, #9400d3, #ff0000, #ff7f00, #ffff00, #00ff00) 1; }
+            71% { border-image: linear-gradient(45deg, #4b0082, #9400d3, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff) 1; }
+            85% { border-image: linear-gradient(45deg, #9400d3, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082) 1; }
+            100% { border-image: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3) 1; }
+        }
+        
+        .rgb-text {
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rgbText 2s ease-in-out infinite;
+        }
+        
+        @keyframes rgbText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .rgb-glow {
+            animation: rgbGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes rgbGlow {
+            0% { filter: drop-shadow(0 0 10px #ff0000); }
+            14% { filter: drop-shadow(0 0 10px #ff7f00); }
+            28% { filter: drop-shadow(0 0 10px #ffff00); }
+            42% { filter: drop-shadow(0 0 10px #00ff00); }
+            57% { filter: drop-shadow(0 0 10px #0000ff); }
+            71% { filter: drop-shadow(0 0 10px #4b0082); }
+            85% { filter: drop-shadow(0 0 10px #9400d3); }
+            100% { filter: drop-shadow(0 0 10px #ff0000); }
+        }
+        
+        .rgb-button {
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            animation: rgbButton 2s ease-in-out infinite;
+            border: none;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        @keyframes rgbButton {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .rgb-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+    </style>
 
-<div class="container mx-auto text-center p-10">
-<h1 class="admin-title mb-6">ᴮᵐᎮᏒØ</h1>
-<p class="text-xl mb-8">پلتفرم اختصاصی مدیریت و گیمینگ حرفه‌ای</p>
-<button id="enterServer" class="cyber-button">ورود به سرور</button>
-<div class="mt-10">
-<button class="tab-button" data-tab="servers">سرورها</button>
-<button class="tab-button" data-tab="vpn">اپ تحریم‌شکن</button>
-<button class="tab-button" data-tab="tournament">پنل تورنومنت</button>
-</div>
-<div class="tab-content mt-6"></div>
-</div>
+  <!-- ====== افزودنی‌های خیلی کم و ایزوله برای مودال/سرورها (تا با بقیه تداخل نکند) ====== -->
+  <style>
+    /* کلاس‌های مودال جدید (ایزوله) */
+    .__ghp_modal { position: fixed; inset: 0; background: rgba(0,0,0,0.92); display: none; align-items:center; justify-content:center; z-index:3000; }
+    .__ghp_panel { width: 92%; max-width:720px; border-radius:16px; padding:28px; box-shadow: 0 0 50px rgba(0,255,255,0.08); background: linear-gradient(135deg,#0f1220, #121227); color:#fff; }
+    .__ghp_row { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:12px; border-radius:10px; margin:8px 0; border:1px solid rgba(255,255,255,0.03); }
+    .__ghp_server_online { border-left: 4px solid #00ff88; }
+    .__ghp_server_offline { border-left: 4px solid #ff5566; opacity:0.85; }
+    .__ghp_small { font-size:0.9rem; color: #cbd5e1; }
+    .__ghp_btn { display:inline-block; padding:10px 16px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.06); background: linear-gradient(45deg,#1a0d2e,#2d1b69); color:#ff00ff; font-family:'Orbitron', monospace; }
+    .__ghp_progress_wrap { width:100%; height:10px; background:rgba(255,255,255,0.04); border-radius:6px; overflow:hidden; margin-top:12px; }
+    .__ghp_progress_bar { height:100%; width:0%; background: linear-gradient(90deg,#00ffff,#ff00ff); transition: width 120ms linear; }
+    .__ghp_center { text-align:center; }
+    .__ghp_close { position:absolute; top:18px; left:18px; color:#ff8080; cursor:pointer; font-weight:bold; font-size:18px; }
+    .__ghp_section_title { font-family:'Orbitron', monospace; font-weight:700; color:#ffcc66; margin-bottom:8px; }
+    .__ghp_tourney_item { padding:10px; border-radius:8px; background: rgba(255,255,255,0.02); margin:6px 0; display:flex; justify-content:space-between; align-items:center; }
+  </style>
+ </head>
 
-<div class="floating-particles"></div>
+ <body>
+  <!-- شبکه‌ی پس‌زمینه -->
+  <div class="cyber-grid"></div>
 
-<!-- Connection Modal -->
-<div id="connectionModal" class="modal">
-  <div class="panel">
-    <div class="connection-spinner"></div>
-    <p id="connectionText" class="text-cyan-400 font-orbitron text-lg">در حال اتصال به سرور...</p>
-    <div class="progress-bar-container">
-      <div class="progress-bar" id="progressBar"></div>
+  <!-- محتوای اصلی (نگه‌داشته شده تقریبا همان ساختار اولیه) -->
+  <div class="container mx-auto text-center p-10">
+    <h1 class="admin-title mb-6">ᴮᵐᎮᏒØ</h1>
+    <p class="text-xl mb-8">پلتفرم اختصاصی مدیریت و گیمینگ حرفه‌ای</p>
+
+    <!-- دکمه ورود -->
+    <button id="enterServer" class="cyber-button">ورود به سرور</button>
+
+    <!-- دکمه‌های تب (سرورها / اپ تحریم‌شکن / تورنومنت) -->
+    <div class="mt-10">
+      <button id="tabServers" class="cyber-button" style="padding:8px 14px; margin:5px; font-size:0.95rem;">سرورها</button>
+      <button id="tabVpn" class="cyber-button" style="padding:8px 14px; margin:5px; font-size:0.95rem;">اپ تحریم‌شکن</button>
+      <button id="tabTourney" class="cyber-button" style="padding:8px 14px; margin:5px; font-size:0.95rem;">پنل تورنومنت</button>
+    </div>
+
+    <!-- کانتینر محتوای تب (محتوای پیش‌فرض: سرورها) -->
+    <div id="tabContent" class="mt-6" style="max-width:900px; margin:18px auto 0; text-align:right;">
+      <!-- محتوا توسط جاوااسکریپت پر می‌شود -->
     </div>
   </div>
-</div>
 
-<!-- Password Modal -->
-<div id="passwordModal" class="modal">
-  <div class="panel">
-    <h2 class="text-fuchsia-400 text-2xl mb-4 font-orbitron">رمز ورود سرور</h2>
-    <input id="passwordInput" type="password" class="password-input-field" placeholder="رمز گیمینگ">
-    <button id="confirmPassword" class="cyber-button">اتصال</button>
-    <p id="errorMsg">رمز اشتباه است!</p>
+  <!-- ذرات شناور (اصل کدت) -->
+  <div class="floating-particles"></div>
+
+  <!-- ===== مودال اتصال / نمایش لیست سرورها (ایزوله، فقط نمایش و عملکرد خواسته‌شده) ===== -->
+  <div id="ghpConnectionModal" class="__ghp_modal" aria-hidden="true">
+    <div class="__ghp_panel" role="dialog" aria-modal="true">
+      <div class="__ghp_close" id="ghpConnClose">×</div>
+      <div id="ghpConnContent">
+        <!-- ابتدا لودینگ و progress نمایش داده می‌شود؛ سپس لیست سرورها -->
+        <div id="ghpLoadingView" class="__ghp_center">
+          <div style="margin-bottom:12px;">
+            <div class="connection-spinner" style="width:48px;height:48px;border-width:4px;"></div>
+          </div>
+          <div class="__ghp_small">در حال برقراری ارتباط با شبکه...</div>
+          <div class="__ghp_progress_wrap" style="max-width:420px; margin:14px auto;">
+            <div class="__ghp_progress_bar" id="ghpProgressBar"></div>
+          </div>
+        </div>
+
+        <div id="ghpServersView" style="display:none;">
+          <div class="__ghp_section_title">لیست سرورها</div>
+          <!-- آیتم‌ها توسط JS پر می‌شود -->
+          <div id="ghpServersList"></div>
+          <div style="margin-top:14px;" class="__ghp_center">
+            <button id="ghpCloseAfter" class="__ghp_btn">بستن</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<script>
-// ذرات
-const container = document.querySelector('.floating-particles');
-for(let i=0;i<40;i++){
-  const p=document.createElement('div');
-  p.classList.add('particle');
-  p.style.left=Math.random()*100+'%';
-  p.style.top=Math.random()*100+'%';
-  p.style.animationDelay=(Math.random()*8)+'s';
-  container.appendChild(p);
-}
+  <!-- ===== مودال رمز برای سرور آنلاین (ایزوله) ===== -->
+  <div id="ghpPasswordModal" class="__ghp_modal" aria-hidden="true">
+    <div class="__ghp_panel" role="dialog" aria-modal="true" style="max-width:420px; position:relative;">
+      <div class="__ghp_close" id="ghpPassClose">×</div>
+      <div class="__ghp_section_title __ghp_center">رمز ورود سرور</div>
+      <div style="margin-top:8px;" class="__ghp_center __ghp_small">این سرور نیاز به رمز دارد. رمز را وارد کنید:</div>
+      <input id="ghpPasswordInput" class="password-input-field" placeholder="رمز گیمینگ" style="margin-top:12px;">
+      <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+        <button id="ghpPassConfirm" class="cyber-button" style="padding:10px 18px;">اتصال</button>
+        <button id="ghpPassCancel" class="cyber-button offline-button" style="padding:10px 18px;">انصراف</button>
+      </div>
+      <div id="ghpPassError" class="password-error" style="display:none; text-align:center; margin-top:12px;">رمز اشتباه است!</div>
+    </div>
+  </div>
 
-// سرورها
-const servers = [
-  {name:"سرور 1", status:"online", ping:103, requiresPassword:true},
-  {name:"سرور 2", status:"offline", ping:null, requiresPassword:false},
-  {name:"سرور 3", status:"offline", ping:null, requiresPassword:false},
-];
+  <!-- ===== محتوای تب‌ها (سرورها / vpn / tourney) در صفحه (نه مودال) - نمایش اولیه پایینِ دکمه‌ها ===== -->
+  <!-- توجه: این بخش برای کاربرانی است که تب‌ها را کلیک کنند -->
+  <template id="tplServers">
+    <div class="coming-soon-card" style="text-align:right;">
+      <div class="game-font-custom" style="font-size:1.1rem; margin-bottom:8px;">لیست سرورها</div>
+      <div id="tabServersList"></div>
+    </div>
+  </template>
 
-// تب ها
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabContent = document.querySelector('.tab-content');
+  <template id="tplVpn">
+    <div class="coming-soon-card" style="text-align:center;">
+      <div class="game-font-custom" style="font-size:1.1rem; margin-bottom:8px;">اپ تحریم‌شکن</div>
+      <div class="text-xl">به زودی...</div>
+    </div>
+  </template>
 
-function renderTab(tab){
-  if(tab==="servers"){
-    let html='';
-    servers.forEach((s,i)=>{
-      html+=`<div class="server-item ${s.status}" data-index="${i}">
-        <span>${s.name}</span>
-        <span>${s.status==='online'?'PING: '+s.ping:'آفلاین'}</span>
-      </div>`;
-    });
-    tabContent.innerHTML = html;
-  } else if(tab==="vpn"){
-    tabContent.innerHTML = `<p class="text-xl">اپ تحریم‌شکن به زودی...</p>`;
-  } else if(tab==="tournament"){
-    let html='<p class="text-xl mb-4">پنل تورنومنت به زودی...</p>';
-    for(let i=1;i<=5;i++){
-      html+=`<div class="server-item offline">مسابقه ${i} - تیم‌ها: ۵ تیم</div>`;
-    }
-    tabContent.innerHTML = html;
-  }
-}
-renderTab('servers');
+  <template id="tplTourney">
+    <div class="coming-soon-card" style="text-align:right;">
+      <div class="game-font-custom" style="font-size:1.1rem; margin-bottom:8px;">پنل تورنومنت</div>
+      <div class="text-xl mb-3">به زودی...</div>
+      <div id="tourneyList"></div>
+    </div>
+  </template>
 
-tabButtons.forEach(btn=>{
-  btn.addEventListener('click',()=>renderTab(btn.dataset.tab));
-});
+  <!-- ====== اسکریپت: فقط عملکردهای لازم اضافه شده (ایزوله، بدون تغییر به بقیه) ====== -->
+  <script>
+    (function(){
+      /********** داده‌های سرورها (طبق خواسته‌ی تو) **********/
+      const servers = [
+        { id: 1, name: 'سرور 1', status: 'online', ping: 103, requiresPassword: true },
+        { id: 2, name: 'سرور 2', status: 'offline', ping: null, requiresPassword: false },
+        { id: 3, name: 'سرور 3', status: 'offline', ping: null, requiresPassword: false }
+      ];
 
-// ورود به سرور
-const connectionModal = document.getElementById('connectionModal');
-const passwordModal = document.getElementById('passwordModal');
-const connectionText = document.getElementById('connectionText');
-const progressBar = document.getElementById('progressBar');
-const passwordInput = document.getElementById('passwordInput');
-const confirmBtn = document.getElementById('confirmPassword');
-const errorMsg = document.getElementById('errorMsg');
+      /********** المان‌ها **********/
+      const enterBtn = document.getElementById('enterServer');
+      const ghpConnectionModal = document.getElementById('ghpConnectionModal');
+      const ghpConnClose = document.getElementById('ghpConnClose');
+      const ghpLoadingView = document.getElementById('ghpLoadingView');
+      const ghpServersView = document.getElementById('ghpServersView');
+      const ghpProgressBar = document.getElementById('ghpProgressBar');
+      const ghpServersList = document.getElementById('ghpServersList');
+      const ghpCloseAfter = document.getElementById('ghpCloseAfter');
 
-tabContent.addEventListener('click', async (e)=>{
-  const serverDiv = e.target.closest('.server-item');
-  if(!serverDiv) return;
-  const index = serverDiv.dataset.index;
-  const server = servers[index];
+      const ghpPasswordModal = document.getElementById('ghpPasswordModal');
+      const ghpPassClose = document.getElementById('ghpPassClose');
+      const ghpPasswordInput = document.getElementById('ghpPasswordInput');
+      const ghpPassConfirm = document.getElementById('ghpPassConfirm');
+      const ghpPassCancel = document.getElementById('ghpPassCancel');
+      const ghpPassError = document.getElementById('ghpPassError');
 
-  connectionText.textContent = "در حال اتصال به سرور...";
-  progressBar.style.width="0%";
-  connectionModal.style.display = "flex";
+      const tabServers = document.getElementById('tabServers');
+      const tabVpn = document.getElementById('tabVpn');
+      const tabTourney = document.getElementById('tabTourney');
+      const tabContent = document.getElementById('tabContent');
 
-  // نوار پیشرفت ~4 ثانیه
-  let progress = 0;
-  const interval = setInterval(()=>{
-    progress += 1;
-    progressBar.style.width = progress+"%";
-    if(progress>=100) clearInterval(interval);
-  }, 40);
+      /********** توابع کمکی **********/
+      function showModal(modalEl){ modalEl.style.display = 'flex'; modalEl.setAttribute('aria-hidden','false'); }
+      function hideModal(modalEl){ modalEl.style.display = 'none'; modalEl.setAttribute('aria-hidden','true'); }
 
-  await new Promise(res=>setTimeout(res,4000));
-  connectionModal.style.display = "none";
-
-  if(server.status==="offline"){
-    alert(`${server.name} در حال اتصال ... سرور آفلاین است.`);
-    return;
-  }
-
-  if(server.requiresPassword){
-    passwordModal.style.display = "flex";
-    errorMsg.style.display="none";
-    confirmBtn.onclick = ()=>{
-      const pass = passwordInput.value.trim();
-      if(pass==="gaming123"){
-        errorMsg.style.display="none";
-        passwordModal.style.display = "none";
-        alert(`✅ اتصال موفق به ${server.name} برقرار شد!`);
-        passwordInput.value="";
-      } else {
-        errorMsg.style.display="block";
-        passwordInput.value="";
+      function resetProgress(){
+        ghpProgressBar.style.width = '0%';
       }
-    }
-  }
-});
 
-// بستن پسورد با ESC
-document.addEventListener('keydown',e=>{
-  if(e.key==="Escape"){
-    passwordModal.style.display="none";
-  }
-});
-</script>
+      function animateProgress(durationMs = 4000){
+        return new Promise((resolve)=>{
+          const start = performance.now();
+          function tick(now){
+            const elapsed = now - start;
+            const ratio = Math.min(1, elapsed / durationMs);
+            ghpProgressBar.style.width = Math.floor(ratio * 100) + '%';
+            if(ratio < 1) requestAnimationFrame(tick);
+            else resolve();
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+
+      /********** ساخت لیست سرورها داخل مودال بعد از لودینگ **********/
+      function renderServersListInModal(){
+        ghpServersList.innerHTML = '';
+        servers.forEach(s=>{
+          const row = document.createElement('div');
+          row.className = '__ghp_row ' + (s.status === 'online' ? '__ghp_server_online' : '__ghp_server_offline');
+          row.innerHTML = `
+            <div style="text-align:right;">
+              <div style="font-weight:700;">${s.name}</div>
+              <div class="__ghp_small">${s.status === 'online' ? 'PING: ' + s.ping : 'سرور آفلاین'}</div>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button class="__ghp_btn" data-action="connect" data-id="${s.id}">اتصال</button>
+            </div>
+          `;
+          ghpServersList.appendChild(row);
+        });
+      }
+
+      /********** رفتار وقتی کاربر روی دکمه ورود سایت کلیک می‌کند **********/
+      enterBtn.addEventListener('click', async ()=>{
+        // نمایش مودال اتصال و لودینگ اولیه
+        resetProgress();
+        ghpLoadingView.style.display = 'block';
+        ghpServersView.style.display = 'none';
+        showModal(ghpConnectionModal);
+
+        // نوار پیشرفت انیمیشنی ~4 ثانیه
+        await animateProgress(4000);
+
+        // بعد از لودینگ: نمایش لیست سرورها
+        ghpLoadingView.style.display = 'none';
+        renderServersListInModal();
+        ghpServersView.style.display = 'block';
+      });
+
+      /********** دکمه بستن مودال **********/
+      ghpConnClose.addEventListener('click', ()=> hideModal(ghpConnectionModal));
+      ghpCloseAfter.addEventListener('click', ()=> hideModal(ghpConnectionModal));
+
+      /********** هندل کلیک روی دکمه‌های اتصال داخل لیست مودال **********/
+      ghpServersList.addEventListener('click', async (ev)=>{
+        const btn = ev.target.closest('[data-action="connect"]');
+        if(!btn) return;
+        const id = Number(btn.dataset.id);
+        const server = servers.find(s=>s.id === id);
+        if(!server) return;
+
+        // وقتی می‌زنیم اتصال: دوباره نمایش لودینگ 4 ثانیه (موشن)
+        ghpLoadingView.style.display = 'block';
+        ghpServersView.style.display = 'none';
+        resetProgress();
+        await animateProgress(4000);
+
+        // بعد از لودینگ:
+        if(server.status === 'offline'){
+          // اگر آفلاین است: پیام درون مودال/یا alert (مطابق خواسته: نوشته شود "در حال اتصال ... سرور آفلاین است")
+          hideModal(ghpConnectionModal);
+          // برای جلوگیری از تغییر بقیه کدها صرفاً از alert ساده استفاده می‌کنیم تا تداخلی ایجاد نشود
+          alert(`${server.name} در حال اتصال ... سرور آفلاین است.`);
+          return;
+        }
+
+        // اگر آنلاین و نیاز به پسورد: نمایش مودال رمز (پس از لودینگ)
+        if(server.requiresPassword){
+          showModal(ghpPasswordModal);
+          ghpPassError.style.display = 'none';
+          ghpPasswordInput.value = '';
+          ghpPasswordInput.focus();
+
+          // handler موقتی برای دکمه اتصال (هر بار که مودال باز می‌شود عمکرد جدید ست می‌شود)
+          const onConfirm = ()=>{
+            const val = ghpPasswordInput.value.trim();
+            // پسورد نمونه: gaming123 (مطابق درخواست‌های قبلی)
+            if(val === 'gaming123'){
+              ghpPassError.style.display = 'none';
+              hideModal(ghpPasswordModal);
+              hideModal(ghpConnectionModal);
+              setTimeout(()=>{ alert('✅ اتصال موفق به ' + server.name + ' برقرار شد!'); }, 60);
+            } else {
+              ghpPassError.style.display = 'block';
+              ghpPasswordInput.value = '';
+              ghpPasswordInput.focus();
+            }
+          };
+
+          const onCancel = ()=>{
+            ghpPassError.style.display = 'none';
+            hideModal(ghpPasswordModal);
+          };
+
+          // remove previous listeners (safe way)
+          ghpPassConfirm.replaceWith(ghpPassConfirm.cloneNode(true));
+          ghpPassCancel.replaceWith(ghpPassCancel.cloneNode(true));
+          // re-query
+          const newConfirm = document.getElementById('ghpPassConfirm');
+          const newCancel = document.getElementById('ghpPassCancel');
+          newConfirm.addEventListener('click', onConfirm);
+          newCancel.addEventListener('click', onCancel);
+
+          // close X
+          ghpPassClose.onclick = onCancel;
+          // keyboard esc
+          const escHandler = (e)=>{ if(e.key === 'Escape'){ onCancel(); document.removeEventListener('keydown', escHandler); } };
+          document.addEventListener('keydown', escHandler);
+        }
+      });
+
+      /********** مودال پسورد: بستن با X **********/
+      ghpPassClose.addEventListener('click', ()=> hideModal(ghpPasswordModal));
+
+      /********** تب‌ها در صفحه اصلی (بدون دخالت در بقیه) **********/
+      function renderTabServersInline(){
+        const tpl = document.getElementById('tplServers').content.cloneNode(true);
+        const listWrap = tpl.querySelector('#tabServersList');
+        listWrap.innerHTML = '';
+        servers.forEach(s=>{
+          const item = document.createElement('div');
+          item.className = 'game-card'; // از کارت‌های اصلی استفاده می‌کنیم
+          item.innerHTML = `
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-weight:700;">${s.name}</div>
+                <div class="__ghp_small">${s.status === 'online' ? 'PING: ' + s.ping : 'سرور آفلاین'}</div>
+              </div>
+              <div>
+                <button class="cyber-button" data-inline-connect="${s.id}" style="padding:8px 12px;">اتصال</button>
+              </div>
+            </div>
+          `;
+          listWrap.appendChild(item);
+        });
+        tabContent.innerHTML = '';
+        tabContent.appendChild(tpl);
+      }
+
+      function renderTabVpnInline(){
+        const tpl = document.getElementById('tplVpn').content.cloneNode(true);
+        tabContent.innerHTML = '';
+        tabContent.appendChild(tpl);
+      }
+
+      function renderTabTourneyInline(){
+        const tpl = document.getElementById('tplTourney').content.cloneNode(true);
+        const tList = tpl.querySelector('#tourneyList');
+        tList.innerHTML = '';
+        for(let i=1;i<=5;i++){
+          const el = document.createElement('div');
+          el.className = 'coming-soon-card';
+          el.style.padding = '10px';
+          el.innerHTML = `<div class="__ghp_tourney_item"> <div>مسابقه ${i}</div> <div class="__ghp_small">تیم‌ها: ۵ تیم</div></div>`;
+          tList.appendChild(el);
+        }
+        tabContent.innerHTML = '';
+        tabContent.appendChild(tpl);
+      }
+
+      // initial
+      renderTabServersInline();
+
+      tabServers.addEventListener('click', renderTabServersInline);
+      tabVpn.addEventListener('click', renderTabVpnInline);
+      tabTourney.addEventListener('click', renderTabTourneyInline);
+
+      // رفتار دکمه‌های inline (داخل تب سرورها) — از همان مکانیزم مودال استفاده می‌کنیم:
+      tabContent.addEventListener('click', async (e)=>{
+        const btn = e.target.closest('[data-inline-connect]');
+        if(!btn) return;
+        const id = Number(btn.dataset.inlineConnect);
+        const server = servers.find(s=>s.id===id);
+        if(!server) return;
+
+        // باز کردن مودال اتصال + لودینگ و سپس رفتار مشابه بالا
+        resetProgress();
+        ghpLoadingView.style.display = 'block';
+        ghpServersView.style.display = 'none';
+        showModal(ghpConnectionModal);
+        await animateProgress(4000);
+        ghpLoadingView.style.display = 'none';
+        renderServersListInModal(); ghpServersView.style.display = 'block';
+
+        // سپس خودکار کلیک روی همان سرور در لیست مودال تا تجربه کاربر پیوسته باشه
+        const targetBtn = ghpServersList.querySelector(`[data-id="${id}"]`);
+        const connectBtn = ghpServersList.querySelector(`[data-id="${id}"]`)?.closest('.__ghp_row')?.querySelector('[data-action="connect"]');
+        if(connectBtn){
+          // شبیه‌سازی کلیک (اما با تاخیر کوچک)
+          setTimeout(()=> connectBtn.click(), 220);
+        }
+      });
+
+      // برای جلوگیری از تداخل: وقتی کاربر کلیک می‌کند بیرون مودال، مودال بسته نشود (رفتار ایمنی)
+      // (در صورت نیاز می‌توان این رفتار را تغییر داد)
+    })();
+  </script>
 </body>
 </html>
